@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>810</width>
-    <height>670</height>
+    <width>800</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>650</height>
+    <width>0</width>
+    <height>0</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -131,7 +131,7 @@ QPushButton, QFrame, QLineEdit {
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="1,8">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QFrame" name="frame_superior">
       <property name="minimumSize">
@@ -407,7 +407,7 @@ QPushButton, QFrame, QLineEdit {
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>3</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="page_agregar">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -428,12 +428,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>SKU</string>
+                   <string>Nombre</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="SKU_agregar">
+                 <widget class="QLineEdit" name="nombre_agregar">
                   <property name="minimumSize">
                    <size>
                     <width>150</width>
@@ -457,12 +457,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Descripción</string>
+                   <string>Teléfono</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="descripcion_agregar"/>
+                 <widget class="QLineEdit" name="telefono_agregar"/>
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_4">
@@ -479,12 +479,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Existencia</string>
+                   <string>Dirección</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="existencia_agregar">
+                 <widget class="QLineEdit" name="direccion_agregar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -508,12 +508,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Precio</string>
+                   <string>Correo</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="precio_agregar">
+                 <widget class="QLineEdit" name="correo_agregar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -562,12 +562,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>SKU</string>
+                   <string>Nombre</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="SKU_actualizar">
+                 <widget class="QLineEdit" name="nombre_actualizar">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -608,12 +608,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Descripción</string>
+                   <string>Teléfono</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1" colspan="2">
-                 <widget class="QLineEdit" name="descripcion_actualizar"/>
+                 <widget class="QLineEdit" name="telefono_actualizar"/>
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_8">
@@ -630,12 +630,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Existencia</string>
+                   <string>Dirección</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="existencia_actualizar">
+                 <widget class="QLineEdit" name="direccion_actualizar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -659,12 +659,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Precio</string>
+                   <string>Correo</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="precio_actualizar">
+                 <widget class="QLineEdit" name="correo_actualizar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -713,12 +713,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>SKU</string>
+                   <string>Nombre</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="SKU_eliminar">
+                 <widget class="QLineEdit" name="nombre_eliminar">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -759,12 +759,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Descripción</string>
+                   <string>Teléfono</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1" colspan="2">
-                 <widget class="QLineEdit" name="descripcion_eliminar"/>
+                 <widget class="QLineEdit" name="telefono_eliminar"/>
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_12">
@@ -781,12 +781,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Existencia</string>
+                   <string>Dirección</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="existencia_eliminar">
+                 <widget class="QLineEdit" name="direccion_eliminar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -810,12 +810,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Precio</string>
+                   <string>Correo</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="precio_eliminar">
+                 <widget class="QLineEdit" name="correo_eliminar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -864,12 +864,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>SKU</string>
+                   <string>Nombre</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="SKU_buscar">
+                 <widget class="QLineEdit" name="nombre_buscar">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -910,12 +910,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Descripción</string>
+                   <string>Teléfono</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="1" colspan="2">
-                 <widget class="QLineEdit" name="descripcion_buscar"/>
+                 <widget class="QLineEdit" name="telefono_buscar"/>
                 </item>
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_16">
@@ -932,12 +932,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Existencia</string>
+                   <string>Dirección</string>
                   </property>
                  </widget>
                 </item>
                 <item row="2" column="1">
-                 <widget class="QLineEdit" name="existencia_buscar">
+                 <widget class="QLineEdit" name="direccion_buscar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>
@@ -961,12 +961,12 @@ QPushButton, QFrame, QLineEdit {
                    </size>
                   </property>
                   <property name="text">
-                   <string>Precio</string>
+                   <string>Correo</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="1">
-                 <widget class="QLineEdit" name="precio_buscar">
+                 <widget class="QLineEdit" name="correo_buscar">
                   <property name="maximumSize">
                    <size>
                     <width>110</width>

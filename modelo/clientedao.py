@@ -1,56 +1,55 @@
-from modelo.producto import Producto
+from modelo.cliente import Cliente
 from modelo.conexionbd import ConexionBD
 
-class ProductoDAO:
+class ClienteDAO:
     def __init__(self):
         self.bd = ConexionBD()
-        self.producto = Producto()
+        self.cliente = Cliente()
 
-    def listarProductos(self):
+    def listarClientes(self):
         self.bd.establecerConexion()
         cursor = self.bd.conexion.cursor()
-        sp = 'exec [dbo].[sp_listar_productos]'
+        sp = 'exec [dbo].[sp_listar_clientes]'
         cursor.execute(sp)
         filas = cursor.fetchall()
         self.bd.cerrarConexion()
 
         return filas
 
-    def actualizarProducto(self):
+    def actualizarCliente(self):
         self.bd.establecerConexion()
         cursor = self.bd.conexion.cursor()
-        sp = 'exec [dbo].[sp_actualizar_producto] @clave=?, @descripcion=?, @existencia=?, @precio=?'
-        param = (self.producto.clave, self.producto.descripcion, self.producto.existencia, self.producto.precio)
+        sp = 'exec [dbo].[sp_actualizar_cliente] @nombre=?, @telefono=?, @direccion=?, @correo=?'
+        param = (self.cliente.nombre, self.cliente.telefono, self.cliente.direccion, self.cliente.correo)
         cursor.execute(sp, param)
         cursor.commit()
         self.bd.cerrarConexion()
 
-    def eliminarProducto(self):
+    def eliminarCliente(self):
         self.bd.establecerConexion()
         cursor = self.bd.conexion.cursor()
-        sp = 'exec [dbo].[sp_eliminar_producto] @clave=?'
-        param = (self.producto.clave)
+        sp = 'exec [dbo].[sp_eliminar_cliente] @nombre=?'
+        param = (self.cliente.nombre)
         cursor.execute(sp, param)
         cursor.commit()
         self.bd.cerrarConexion()
 
-    def insertarProducto(self):
+    def insertarCliente(self):
         self.bd.establecerConexion()
         cursor = self.bd.conexion.cursor()
-        sp = 'exec [dbo].[sp_insertar_producto] @clave=?, @descripcion=?, @existencia=?, @precio=?'
-        param = (self.producto.clave, self.producto.descripcion, self.producto.existencia, self.producto.precio)
+        sp = 'exec [dbo].[sp_insertar_cliente] @nombre=?, @telefono=?, @direccion=?, @correo=?'
+        param = (self.cliente.nombre, self.cliente.telefono, self.cliente.direccion, self.cliente.correo)
         cursor.execute(sp, param)
         cursor.commit()
         self.bd.cerrarConexion()
 
-    def buscar_producto(self):
+    def buscar_cliente(self):
         self.bd.establecerConexion()
         cursor = self.bd.conexion.cursor()
-        sp = 'exec [dbo].[sp_buscar_producto] @clave=?'
-        param = (self.producto.clave)
+        sp = 'exec [dbo].[sp_buscar_cliente] @nombre=?'
+        param = (self.cliente.nombre)
         cursor.execute(sp, param)
         filas = cursor.fetchall()
         self.bd.cerrarConexion()
 
         return filas
-

@@ -2,14 +2,14 @@ import sys
 from PyQt5 import QtCore
 from PyQt5.QtCore import QPropertyAnimation
 from PyQt5 import QtCore, QtGui, QtWidgets, uic  
-from modelo.productodao import ProductoDAO
+from modelo.clientedao import ClienteDAO
 
-class Load_ui_productos(QtWidgets.QMainWindow):
+class Load_ui_clientes(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi("ui/ui_productos.ui", self)
+        uic.loadUi("ui/ui_clientes.ui", self)
         self.show()
-        self.productodao = ProductoDAO()
+        self.clientedao = ClienteDAO()
 
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
         self.setWindowOpacity(1)
@@ -28,19 +28,19 @@ class Load_ui_productos(QtWidgets.QMainWindow):
         self.boton_eliminar.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_eliminar))
         self.boton_consultar.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_consultar))
 
-        self.accion_guardar.clicked.connect(self.guardar_producto)
-        self.accion_actualizar.clicked.connect(self.actualizar_producto)
-        self.accion_eliminar.clicked.connect(self.eliminar_producto)
-        self.accion_limpiar.clicked.connect(self.limpiar_producto)
+        self.accion_guardar.clicked.connect(self.guardar_cliente)
+        self.accion_actualizar.clicked.connect(self.actualizar_cliente)
+        self.accion_eliminar.clicked.connect(self.eliminar_cliente)
+        self.accion_limpiar.clicked.connect(self.limpiar_cliente)
 
-        self.buscar_actualizar.clicked.connect(self.buscar_producto_actualizar)
-        self.buscar_eliminar.clicked.connect(self.buscar_producto_eliminar)
-        self.buscar_buscar.clicked.connect(self.buscar_producto_buscar)
+        self.buscar_actualizar.clicked.connect(self.buscar_cliente_actualizar)
+        self.buscar_eliminar.clicked.connect(self.buscar_cliente_eliminar)
+        self.buscar_buscar.clicked.connect(self.buscar_cliente_buscar)
         self.boton_refresh.clicked.connect(self.actualizar_tabla)
 
     # Operaciones con el modelo de datos  
     def actualizar_tabla(self):
-        datos = self.productodao.listarProductos()
+        datos = self.clientedao.listarClientes()
         self.tabla_consulta.setRowCount(len(datos))
         fila = 0
         for item in datos:
@@ -50,67 +50,70 @@ class Load_ui_productos(QtWidgets.QMainWindow):
             self.tabla_consulta.setItem(fila,3, QtWidgets.QTableWidgetItem(str(item[4])))
             fila += 1
 
-    def guardar_producto(self):
-        self.productodao.producto.clave = self.SKU_agregar.text()
-        self.productodao.producto.descripcion = self.descripcion_agregar.text()
-        self.productodao.producto.existencia = int(self.existencia_agregar.text())
-        self.productodao.producto.precio = float(self.precio_agregar.text())
+    def guardar_cliente(self):
+        self.clientedao.cliente.nombre = self.nombre_agregar.text()
+        self.clientedao.cliente.telefono = self.telefono_agregar.text()
+        self.clientedao.cliente.direccion = self.direccion_agregar.text()
+        self.clientedao.cliente.correo = self.correo_agregar.text()
 
-        self.productodao.insertarProducto()
+        self.clientedao.insertarCliente()
 
-    def actualizar_producto(self):
-        self.productodao.producto.clave = self.SKU_actualizar.text()
-        self.productodao.producto.descripcion = self.descripcion_actualizar.text()
-        self.productodao.producto.existencia = int(self.existencia_actualizar.text())
-        self.productodao.producto.precio = float(self.precio_actualizar.text())
+    def actualizar_cliente(self):
+        self.clientedao.cliente.nombre = self.nombre_actualizar.text()
+        self.clientedao.cliente.telefono = self.telefono_actualizar.text()
+        self.clientedao.cliente.direccion = self.direccion_actualizar.text()
+        self.clientedao.cliente.correo = self.correo_actualizar.text()
 
-        self.productodao.actualizarProducto()
+        print(f"Nombre a buscar (WHERE): {self.clientedao.cliente.nombre}")
+        print(f"Nuevos datos: Tel={self.clientedao.cliente.telefono}, Dir={self.clientedao.cliente.direccion}, Correo={self.clientedao.cliente.correo}")
+
+        self.clientedao.actualizarCliente()
         
-    def eliminar_producto(self):
-        self.productodao.producto.clave = self.SKU_eliminar.text()
-        self.productodao.producto.descripcion = self.descripcion_eliminar.text()
-        self.productodao.producto.existencia = int(self.existencia_eliminar.text())
-        self.productodao.producto.precio = float(self.precio_eliminar.text())
+    def eliminar_cliente(self):
+        self.clientedao.cliente.nombre = self.nombre_agregar.text()
+        self.clientedao.cliente.telefono = self.telefono_agregar.text()
+        self.clientedao.cliente.direccion = self.direccion_agregar.text()
+        self.clientedao.cliente.correo = self.correo_agregar.text()
 
-        self.productodao.eliminarProducto()
+        self.clientedao.eliminarCliente()
 
-    def limpiar_producto(self):
-        self.SKU_buscar.setText('')
-        self.descripcion_buscar.setText('')
-        self.existencia_buscar.setText('')
-        self.precio_buscar.setText('')
+    def limpiar_cliente(self):
+        self.nombre_buscar.setText('')
+        self.telefono_buscar.setText('')
+        self.direccion_buscar.setText('')
+        self.correo_buscar.setText('')
 
-    def buscar_producto_actualizar(self):
-        self.productodao.producto.clave = self.SKU_actualizar.text()
-        datos = self.productodao.buscar_producto()
+    def buscar_cliente_actualizar(self):
+        self.clientedao.cliente.nombre = self.nombre_actualizar.text()
+        datos = self.clientedao.buscar_cliente()
         self.tabla_consulta.setRowCount(len(datos))
         if len(datos) > 0:
-            self.descripcion_actualizar.setText(str(datos[0][1]))
-            self.existencia_actualizar.setText(str(datos[0][2]))
-            self.precio_actualizar.setText(str(datos[0][3]))
+            self.telefono_actualizar.setText(datos[0][1])
+            self.direccion_actualizar.setText(datos[0][2])
+            self.correo_actualizar.setText(datos[0][3])
         else:
             pass
 
-    def buscar_producto_eliminar(self):
-        self.productodao.producto.clave = self.SKU_eliminar.text()
-        datos = self.productodao.buscar_producto()
+    def buscar_cliente_eliminar(self):
+        self.clientedao.cliente.nombre = self.nombre_eliminar.text()
+        datos = self.clientedao.buscar_cliente()
         self.tabla_consulta.setRowCount(len(datos))
         if len(datos) > 0:
-            self.descripcion_eliminar.setText(str(datos[0][1]))
-            self.existencia_eliminar.setText(str(datos[0][2]))
-            self.precio_eliminar.setText(str(datos[0][3]))
+            self.telefono_eliminar.setText(str(datos[0][1]))
+            self.direccion_eliminar.setText(str(datos[0][2]))
+            self.correo_eliminar.setText(str(datos[0][3]))
         
         else:
             pass
 
-    def buscar_producto_buscar(self):
-        self.productodao.producto.clave = self.SKU_buscar.text()
-        datos = self.productodao.buscar_producto()
+    def buscar_cliente_buscar(self):
+        self.clientedao.cliente.nombre= self.nombre_buscar.text()
+        datos = self.clientedao.buscar_cliente()
         self.tabla_consulta.setRowCount(len(datos))
         if len(datos) > 0:
-            self.descripcion_buscar.setText(str(datos[0][1]))
-            self.existencia_buscar.setText(str(datos[0][2]))
-            self.precio_buscar.setText(str(datos[0][3]))
+            self.telefono_buscar.setText(str(datos[0][1]))
+            self.direccion_buscar.setText(str(datos[0][2]))
+            self.correo_buscar.setText(str(datos[0][3]))
             
         else:
             pass

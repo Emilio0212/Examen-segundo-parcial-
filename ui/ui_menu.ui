@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>650</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ==================== BASE GENERAL ==================== */
+QWidget {
+    background-color: #0b0c10; /* Fondo casi negro */
+    color: #66fcf1; /* Azul neón claro */
+    font-family: &quot;Orbitron&quot;, &quot;Segoe UI&quot;, sans-serif;
+    font-size: 12pt;
+}
+
+/* ==================== FRAMES ==================== */
+QFrame {
+    background-color: #0b0c10;
+    border: 1px solid #45a29e;
+    border-radius: 10px;
+}
+
+QFrame#frame_catalogo {
+    background-color: #0b0c10;
+    border: 2px solid #45a29e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #45a29e;
+}
+
+/* ==================== BARRA SUPERIOR ==================== */
+QFrame#frame_superior {
+    background-color: #1f2833;
+    border-bottom: 2px solid #45a29e;
+}
+
+QLabel#titulo_barra {
+    color: #66fcf1;
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ==================== BOTONES ==================== */
+QPushButton {
+    background-color: #1f2833;
+    border: 2px solid #45a29e;
+    border-radius: 8px;
+    color: #66fcf1;
+    padding: 6px 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease-in-out;
+}
+
+QPushButton:hover {
+    background-color: #0b0c10;
+    border: 2px solid #66fcf1;
+    box-shadow: 0 0 10px #66fcf1;
+}
+
+QPushButton:pressed {
+    background-color: #45a29e;
+    color: #0b0c10;
+}
+
+/* ==================== CAMPOS DE TEXTO ==================== */
+QLineEdit {
+    background-color: #0b0c10;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: #66fcf1;
+}
+
+QLineEdit:focus {
+    border: 1px solid #66fcf1;
+    box-shadow: 0 0 10px #66fcf1;
+}
+
+/* ==================== TABLAS ==================== */
+QTableWidget {
+    background-color: #0b0c10;
+    color: #66fcf1;
+    border: 1px solid #45a29e;
+    gridline-color: #45a29e;
+    selection-background-color: #45a29e;
+    selection-color: #0b0c10;
+}
+
+QHeaderView::section {
+    background-color: #1f2833;
+    border: 1px solid #45a29e;
+    color: #66fcf1;
+    font-weight: bold;
+}
+
+/* ==================== SCROLLBAR ==================== */
+QScrollBar:vertical {
+    background: #1f2833;
+    width: 10px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical {
+    background: #45a29e;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #66fcf1;
+}
+
+/* ==================== EFECTO BRILLO (detalles TRON) ==================== */
+QPushButton, QFrame, QLineEdit {
+    outline: none;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame_catalogo">
+      <property name="styleSheet">
+       <string notr="true">/* ==================== VENTANA GENERAL ==================== */
+QWidget {
+    background-color: #f4f6f8; /* Fondo gris claro */
+    font-family: &quot;Segoe UI&quot;;
+    color: #333;
+}
+
+/* ==================== FRAMES ==================== */
+QFrame#frame_catalogo {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Borde claro y elegante */
+    padding: 10px;
+}
+
+/* Frame lateral (por ejemplo, menú) */
+QFrame#frame_menu {
+    background-color: #e9eef5;
+    border-right: 1px solid #cfd6e3;
+}
+
+/* Frame superior o barra de título personalizada */
+QFrame#frame_superior {
+    background-color: #2b5797;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* ==================== ETIQUETAS ==================== */
+QLabel {
+    font-size: 13px;
+    color: #333;
+}
+
+QLabel#titulo_barra {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* ==================== BOTONES ==================== */
+QPushButton {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 10px;
+    text-align: left;
+    font-size: 13px;
+}
+
+QPushButton:hover {
+    background-color: #dce6f7; /* Azul muy suave */
+    border: 1px solid #2b5797;
+}
+
+QPushButton:pressed {
+    background-color: #c5d8f2;
+}
+
+/* ==================== CAM*
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>70</y>
+         <width>511</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="clientes">
+          <property name="text">
+           <string>Clientes</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>C:/Users/194541-4/Downloads/sign-of-people-icon-vector.jpg</normaloff>C:/Users/194541-4/Downloads/sign-of-people-icon-vector.jpg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="productos">
+          <property name="text">
+           <string>Productos</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>C:/Users/194541-4/Downloads/394500.png</normaloff>C:/Users/194541-4/Downloads/394500.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>64</width>
+            <height>64</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>269</width>
+         <height>37</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Catálogos</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cerrar">
+      <property name="font">
+       <font>
+        <family>Orbitron,Segoe UI,sans-serif</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Cerrar sesión</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
