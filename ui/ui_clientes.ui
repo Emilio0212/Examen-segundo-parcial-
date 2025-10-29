@@ -407,7 +407,7 @@ QPushButton, QFrame, QLineEdit {
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="page_agregar">
              <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -1094,22 +1094,22 @@ QTableWidget QScrollBar::sub-line:vertical {
                 </property>
                 <column>
                  <property name="text">
-                  <string>New Column</string>
+                  <string>Nombre</string>
                  </property>
                 </column>
                 <column>
                  <property name="text">
-                  <string>SKU</string>
+                  <string>Telefono</string>
                  </property>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Descripción</string>
+                  <string>Direccion</string>
                  </property>
                 </column>
                 <column>
                  <property name="text">
-                  <string>Precio</string>
+                  <string>Correo</string>
                  </property>
                 </column>
                </widget>
