@@ -135,68 +135,7 @@ QPushButton, QFrame, QLineEdit {
     <item>
      <widget class="QFrame" name="frame_catalogo">
       <property name="styleSheet">
-       <string notr="true">/* ==================== VENTANA GENERAL ==================== */
-QWidget {
-    background-color: #f4f6f8; /* Fondo gris claro */
-    font-family: &quot;Segoe UI&quot;;
-    color: #333;
-}
-
-/* ==================== FRAMES ==================== */
-QFrame#frame_catalogo {
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid #ddd; /* Borde claro y elegante */
-    padding: 10px;
-}
-
-/* Frame lateral (por ejemplo, menú) */
-QFrame#frame_menu {
-    background-color: #e9eef5;
-    border-right: 1px solid #cfd6e3;
-}
-
-/* Frame superior o barra de título personalizada */
-QFrame#frame_superior {
-    background-color: #2b5797;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-/* ==================== ETIQUETAS ==================== */
-QLabel {
-    font-size: 13px;
-    color: #333;
-}
-
-QLabel#titulo_barra {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-}
-
-/* ==================== BOTONES ==================== */
-QPushButton {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 6px 10px;
-    text-align: left;
-    font-size: 13px;
-}
-
-QPushButton:hover {
-    background-color: #dce6f7; /* Azul muy suave */
-    border: 1px solid #2b5797;
-}
-
-QPushButton:pressed {
-    background-color: #c5d8f2;
-}
-
-/* ==================== CAM*
-</string>
+       <string notr="true"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -221,7 +160,7 @@ QPushButton:pressed {
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>C:/Users/194541-4/Downloads/sign-of-people-icon-vector.jpg</normaloff>C:/Users/194541-4/Downloads/sign-of-people-icon-vector.jpg</iconset>
+            <normaloff>../../Downloads/sign-of-people-icon-vector.jpg</normaloff>../../Downloads/sign-of-people-icon-vector.jpg</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -238,7 +177,7 @@ QPushButton:pressed {
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>C:/Users/194541-4/Downloads/394500.png</normaloff>C:/Users/194541-4/Downloads/394500.png</iconset>
+            <normaloff>../../Downloads/394500.png</normaloff>../../Downloads/394500.png</iconset>
           </property>
           <property name="iconSize">
            <size>
